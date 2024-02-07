@@ -1,7 +1,11 @@
 import { useFormik } from "formik";
 import { schema } from "../schema";
+import { useNavigate } from "react-router-dom";
+import InputField from "../components/InputField";
+import { inputs } from "../constants";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -10,7 +14,9 @@ const LoginPage = () => {
       confirmPassword: "",
     },
     validationSchema: schema,
-    onSubmit: (values, actions) => {},
+    onSubmit: (values, actions) => {
+      navigate("/home");
+    },
   });
 
   return (
@@ -22,52 +28,9 @@ const LoginPage = () => {
         </h2>
 
         <form onSubmit={formik.handleSubmit}>
-          <div>
-            <label>Emailiniz </label>
-            <input
-              name="email"
-              onChange={formik.handleChange}
-              className="form-control mt-2 "
-              type="text"
-            />
-
-            {formik.errors.email && <span>{formik.errors.email}</span>}
-          </div>
-
-          <div>
-            <label>Yaş </label>
-            <input
-              name="age"
-              onChange={formik.handleChange}
-              className="form-control mt-2 "
-              type="number"
-            />
-            {formik.errors.age && <span>{formik.errors.age}</span>}
-          </div>
-
-          <div>
-            <label>Şifre </label>
-            <input
-              name="password"
-              onChange={formik.handleChange}
-              className="form-control mt-2  "
-              type="text"
-            />
-            {formik.errors.password && <span>{formik.errors.password}</span>}
-          </div>
-
-          <div>
-            <label>Şifre Onay </label>
-            <input
-              name="confirmPassword"
-              onChange={formik.handleChange}
-              className="form-control mt-2  "
-              type="text"
-            />
-            {formik.errors.confirmPassword && (
-              <span>{formik.errors.confirmPassword}</span>
-            )}
-          </div>
+          {inputs.map((data, i) => (
+            <InputField key={i} formik={formik} data={data} />
+          ))}
           <button type="submit">Kaydol</button>
         </form>
       </div>
