@@ -13,7 +13,6 @@ const LoginPage = () => {
     onSubmit: (values, actions) => {},
   });
 
-  console.log(formik);
   return (
     <div className="login-page">
       <div className="container py-5 ">

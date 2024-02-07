@@ -1,6 +1,7 @@
 //  validasyon şeması
-
 import * as yup from "yup";
+
+const regex = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{5,}$";
 
 export const schema = yup.object().shape({
   // email için zorunluluklar
@@ -16,7 +17,14 @@ export const schema = yup.object().shape({
     .integer("Lütfen tam sayı giriniz.")
     .required("Yaş alanı zorunludur."),
   // şifre için zorunluluklar
-  password: yup.string().min(5,"Şifre en az 5 karekter olmalı.").,
+  password: yup
+    .string()
+    .min(5, "Şifre en az 5 karekter olmalı.")
+    .matches(regex, "Şifreniz yeterince güçlü değil")
+    .required("Şifre alanı zorunludur."),
   // şifreOnay için zorunluluklar
-  confirmPassword: "",
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref("password")])
+    .required("Şifre onay zorunludur."),
 });
