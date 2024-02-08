@@ -1,11 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LoginPage from "./Pages/LoginPage";
+import LoginPageController from "./controllers/LoginPageController";
+import MainPageController from "./controllers/MainPageController";
+import HeaderView from "./views/HeaderView";
 
 const App = () => {
   return (
     <BrowserRouter>
+      <HeaderView />
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/" element={<LoginPageController />} />
+        <Route path="/home" element={<MainPageController />} />
       </Routes>
     </BrowserRouter>
   );

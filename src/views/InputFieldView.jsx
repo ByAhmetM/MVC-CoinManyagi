@@ -1,4 +1,4 @@
-const InputField = ({ formik, data }) => {
+const InputFieldView = ({ formik, data }) => {
   const { label, name, type } = data;
 
   return (
@@ -21,4 +21,4 @@ const InputField = ({ formik, data }) => {
   );
 };
 
-export default InputField;
+export default InputFieldView;

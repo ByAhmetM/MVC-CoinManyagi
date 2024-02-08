@@ -90,3 +90,12 @@ form div span {
 form .error {
   outline: 2px solid red !important;
 }
+
+.active {
+  color: red;
+  border-bottom: 1px solid red;
+}
+
+.active:hover {
+  color: red;
+}
