@@ -1,8 +1,9 @@
 import axios from "axios";
 
 export default class MainPageModel {
-  static async getCoins() {
+  static async getCoins(page) {
     const params = {
+      offset: (page - 1) * 15,
       limit: 15,
     };
     try {
