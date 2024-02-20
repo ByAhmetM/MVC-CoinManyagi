@@ -1,20 +1,21 @@
-# Coin Application
+<h1>Coinmania</h1>
 
-This project is a simple coin tracking application developed using React and several other libraries.
+Bu proje, Model-View-Controller (MVC) mimarisi kullanılarak geliştirilmiş bir Kripto Para websitesidir. Kullanıcılara kripto para verilerini keşfetmek ve takip etmek için kapsamlı bir platform sunmak amacıyla çeşitli teknoloji ve kütüphaneler entegre edilmiştir. Bu projede kullanılan temel teknoloji ve kütüphaneler şunlardır:
 
-# Used Libraries
+# Kütüphaneler
 
-axios: A library used for HTTP requests.
-bootstrap: A CSS framework for quickly and efficiently creating beautiful designs.
-chart.js: A library used for creating charts.
-formik: A library used for form management.
-millify: A library used to make numbers more readable.
-react: The core library for developing React applications.
-react-chartjs-2: A library for using Chart.js with React.
-react-dom: A library used to connect a React application to a web page.
-react-icons: A library used for using different icon sets.
-react-router-dom: A library used for page navigation in React applications.
-yup: A library used for schema validation.
+- Bootstrap: Duyarlı web siteleri oluşturmak için bir ön yüz çerçevesi.
+- Formik: React için bir form kütüphanesi; formları ve form doğrulamalarını kolayca yönetmeye yardımcı olur.
+- Yup: Formik ile sorunsuz entegrasyon sağlayan şema tabanlı bir doğrulama kütüphanesi.
+- Regex: Regular Expressions (Düzenli İfadeler), metin tabanlı veri analizi ve doğrulama için kullanılmıştır.
+- React Router DOM: React uygulamaları arasında farklı bileşenler arasında gezinme için deklaratif bir yol.
+- Axios: Sunucuya yönelik asenkron istekler için kullanılan bir HTTP istemcisi.
+- Chart.js ve React-Chartjs-2: Kripto para verilerini görüntülemek için etkileşimli ve görsel olarak çekici grafikler oluşturmak için kullanılan kütüphaneler.
+- React Icons: React uygulamaları için özelleştirilebilir ikon seti.
+- Millify: Büyük sayıları insan tarafından okunabilir bir formata biçimlendirmek için kullanılan araç.
+- Netlify'de Canlı İncele: https://paralan.netlify.app/
+
+
 
 # Usage
 
@@ -26,4 +27,4 @@ On the detail page, you can view the line and bar charts of the selected coin, a
 
 
 # GIF
-
+![](/public/coinmony.gif)
